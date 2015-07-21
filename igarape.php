@@ -8,10 +8,16 @@
  * Author URI: http://www.haarieh.com/
 */
 function igarape_init() {
+	$server = $_SERVER['SERVER_NAME'];
+	$endereco = $_SERVER ['REQUEST_URI'];
+	$res = "http://" . $server . $endereco;
+	$url = substr($res, 22, 2);
+ 	$ac = $url;
+ 	$bd = 'en';
     $qode_options = get_option('qode_options_stockholm');
     $en = "http://igarape.org.br/wp-content/themes/stockholm/en.jpg";
     $pt = "http://igarape.org.br/wp-content/themes/stockholm/pt.png";
-    if(ICL_LANGUAGE_CODE == "en") {    	
+    if($ac === $bd) {    	
     	$qode_options['logo_image'] = $en;
     	$qode_options['logo_image_light'] = $en;
     	$qode_options['logo_image_dark'] = $en;
