@@ -7,9 +7,9 @@
  * Author: Anderson Silva
  * Author URI: http://www.haarieh.com/
 */
-function igarape_init() {
-    $qode_options = get_option('qode_options_stockholm');
-    $en = "http://igarape.org.br/wp-content/themes/stockholm/en.jpg";
+function pre_option_qode_options_stockholm($qode_options_stockholm) {
+    print_r($qode_options_stockholm)
+    /*$en = "http://igarape.org.br/wp-content/themes/stockholm/en.jpg";
     $pt = "http://igarape.org.br/wp-content/themes/stockholm/pt.png";
     if(ICL_LANGUAGE_CODE == "en") {    	
     	$qode_options['logo_image'] = $en;
@@ -19,9 +19,8 @@ function igarape_init() {
     	$qode_options['logo_image'] = $pt;
     	$qode_options['logo_image_light'] = $pt;
     	$qode_options['logo_image_dark'] = $pt;
-    }
-    update_option('qode_options_stockholm',$qode_options);
+    }*/
 }
-add_action('init', 'igarape_init');
+add_filter('pre_option_posts_per_page', 'limit_posts_per_page');
 ?>
 
