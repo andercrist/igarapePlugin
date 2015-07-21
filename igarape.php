@@ -22,6 +22,6 @@ function igarape_init() {
     }
     update_option('qode_options_stockholm',$qode_options);
 }
-add_action('get_header', 'igarape_init');
+add_action('init', 'igarape_init');
 ?>
 
